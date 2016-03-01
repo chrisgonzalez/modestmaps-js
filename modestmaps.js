@@ -45,7 +45,7 @@ var MM = com.modestmaps = {
         // http://paulirish.com/2011/requestanimationframe-for-smart-animating/
         // can't apply these directly to MM because Chrome needs window
         // to own webkitRequestAnimationFrame (for example)
-        // perhaps we should namespace an alias onto window instead? 
+        // perhaps we should namespace an alias onto window instead?
         // e.g. window.mmRequestAnimationFrame?
         return function(callback) {
             (window.requestAnimationFrame  ||
@@ -245,7 +245,7 @@ var MM = com.modestmaps = {
                    " @" + this.zoom.toFixed(3) + ")";
         },
         // Quickly generate a string representation of this coordinate to
-        // index it in hashes. 
+        // index it in hashes.
         toKey: function() {
             // We've tried to use efficient hash functions here before but we took
             // them out. Contributions welcome but watch out for collisions when the
@@ -382,7 +382,7 @@ var MM = com.modestmaps = {
 
         return new MM.Location(latN / deg2rad, lonN / deg2rad);
     };
-    
+
     // Returns bearing from one point to another
     //
     // * FIXME: bearing is not constant along significant great circle arcs.
@@ -2924,17 +2924,6 @@ var MM = com.modestmaps = {
         return map;
     };
     if (typeof module !== 'undefined' && module.exports) {
-      module.exports = {
-          Point: MM.Point,
-          Projection: MM.Projection,
-          MercatorProjection: MM.MercatorProjection,
-          LinearProjection: MM.LinearProjection,
-          Transformation: MM.Transformation,
-          Location: MM.Location,
-          MapProvider: MM.MapProvider,
-          TemplatedMapProvider: MM.TemplatedMapProvider,
-          Coordinate: MM.Coordinate,
-          deriveTransformation: MM.deriveTransformation
-      };
+      module.exports = MM;
     }
 })(MM);
